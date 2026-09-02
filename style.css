@@ -29,24 +29,6 @@ body {
   width: 100%;
   height: 100vh;
 }
-/* barra de atalhos  */
-
-.barra-de-atalhos {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translate(-50%);
-  background-color: rgba(252, 252, 252, 0.041);
-  display: flex;
-  width: 70%;
-  height: 60px;
-  border-radius: 30px;
-  border: 1px solid #000000a9;
-  backdrop-filter: blur(8px);
-}
-
-.barra-de-atalhos a {
-}
 
 /* primeira página */
 
@@ -104,7 +86,33 @@ body {
 
 /* segunda página  */
 
-.quem-sou {
+.oque-fiz {
+}
+
+.oque-fiz h1 {
+  font-family: "Caudex";
+  font-size: 40pt;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.projetos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.projetos .card {
+  background-color: #005e7554;
+  padding: 1rem;
+  height: 400px;
+  flex: 0 1 30%;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #005e7554;
 }
 
 .carrossel-ferramentas {
@@ -115,7 +123,7 @@ body {
   box-shadow: 0 0 30px #005e75;
 }
 
-.card {
+.grupo .card {
   padding: 70px;
   /* border-right: 1px solid var(--ciano); */
 }
