@@ -17,17 +17,17 @@
 /* Estilos gerais  */
 
 body {
-  /* background-color: black; */
+  overflow-x: hidden;
   background: linear-gradient(black, var(--ciano));
 }
 
 .conteiner {
-  width: 100vw;
+  width: 100%;
 }
 
 .pagina {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* primeira página */
@@ -36,28 +36,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
+  gap: 2rem;
+  padding: 4rem 6%;
 }
 
 .titulo {
   width: 50%;
-  margin-left: 80px;
+  min-width: 0;
 }
 
 .titulo h1 {
-  font-size: 60pt;
   font-family: "Caudex";
+  font-size: clamp(2.5rem, 6vw, 60pt);
+  line-height: 1.1;
 }
 
 .titulo h2 {
   font-family: "Caudex";
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   border-left: 5px double var(--ciano);
   padding-left: 5px;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
 }
 
 .titulo p {
-  font-size: 40pt;
+  font-size: clamp(1.4rem, 3.5vw, 40pt);
+  line-height: 1.25;
 }
 
 .italico {
@@ -77,21 +81,17 @@ body {
 }
 
 .foto-pessoal img {
-  width: 80%;
-  max-width: 700px;
-  margin-right: 80px;
+  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
   border: 1px solid #f56e003b;
 }
 
 /* segunda página  */
 
-.oque-fiz {
-}
-
 .oque-fiz h1 {
   font-family: "Caudex";
-  font-size: 40pt;
+  font-size: clamp(1.6rem, 4vw, 40pt);
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -102,6 +102,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 5rem;
+  padding: 0 2rem 5rem;
 }
 
 .projetos .card {
@@ -109,6 +110,7 @@ body {
   padding: 1rem;
   height: 400px;
   flex: 0 1 30%;
+  min-width: 280px;
   text-align: center;
   align-items: center;
   border-radius: 10px;
@@ -125,7 +127,6 @@ body {
 
 .grupo .card {
   padding: 70px;
-  /* border-right: 1px solid var(--ciano); */
 }
 
 .card img {
@@ -157,5 +158,91 @@ body {
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Responsivo - tablet */
+
+@media (max-width: 1024px) {
+  .inicio {
+    padding: 3rem 5%;
+  }
+
+  .projetos .card {
+    flex: 0 1 45%;
+  }
+}
+
+/* Responsivo - celular */
+
+@media (max-width: 768px) {
+  .inicio {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 8%;
+  }
+
+  .titulo {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* .titulo h1 {
+    font-size: 50pt;
+  } */
+
+  .titulo h2 {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .foto-pessoal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .foto-pessoal img {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .carrossel-ferramentas {
+    height: 60px;
+  }
+
+  .grupo .card {
+    padding: 40px;
+  }
+
+  .card img {
+    height: 40px;
+    flex-basis: 3em;
+  }
+
+  .oque-fiz h1 {
+    margin: 2rem 1rem 2.5rem;
+  }
+
+  .projetos {
+    gap: 3rem;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .projetos .card {
+    flex: 0 1 100%;
+    height: 350px;
+  }
+}
+
+/* Responsivo - celular pequeno */
+
+@media (max-width: 480px) {
+  .inicio {
+    padding: 2.5rem 6%;
+  }
+
+  .projetos .card {
+    height: 300px;
   }
 }
